@@ -1,0 +1,203 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Burnin' Rubber 4 Game Of The Year @Shockwave.com</title>
+
+<style type="text/css">
+* 
+	{ 
+		margin:0; padding:0; 
+	}
+	
+* img 
+	{ 
+		border:0; 
+	}
+	
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333333;
+	background-color:#ffffff;
+	background-image: url(/Images/ShockwaveArchiveBackground.png);
+	background-repeat: no-repeat;
+	background-position: center top;
+	background-size: cover;
+	text-align:center;
+}
+#wrappergame 
+	{ 
+		width: 816px; 
+		margin: 0 auto; 
+	}
+	
+#titlegame 
+	{ 
+		width: 816px; 
+		padding: 28px 0 4px; 
+		margin: 0 auto; 
+	}
+	
+#game 
+	{ 
+		text-align:center; 
+		margin:0 auto; 
+		border: 8px solid #fcf8f5; 
+	}
+	
+#footer 
+	{
+		margin-top:10px; color:#FFFFFF; 
+		clear: both; 
+		width:490px; 
+		margin:0 auto; 
+		font-size:11px; 
+		font-weight:bold; 
+		line-height:12px; 
+		text-align:center; border:none; 
+	}
+#colorBox 
+	{ 
+		position: fixed; 
+		top:10px; 
+		right:10px; 
+		background:#ffffff; 
+		padding:6px; 
+		border-radius:6px; 
+		box-shadow:0 0 5px rgba(0,0,0,0.3); 
+		z-index:9999; 
+	}
+	
+#colorBox select 
+	{
+		font-size:12px; 
+		padding:3px; 
+	}
+	
+</style>
+
+<script>
+function getDailyCode() {
+	var d = new Date();
+	var year = d.getUTCFullYear().toString().slice(-2); 
+	var month = padStart((d.getUTCMonth() + 1), 2, "0");
+	var day = padStart(d.getUTCDate(), 2, "0");
+	return year + month + day;
+}
+
+function padStart(str, targetLength, padString) {
+    str = String(str);
+    padString = String(padString || ' ');
+    while (str.length < targetLength) {
+        str = padString + str;
+    }
+    return str;
+}
+
+	document.addEventListener("DOMContentLoaded", function() {
+    var select = document.getElementById("bgColorSelect");
+    var savedColor = localStorage.getItem("bgColor");
+    if(savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        document.body.style.backgroundImage = "none";
+        select.value = savedColor;
+    }
+
+    select.addEventListener("change", function() {
+        document.body.style.backgroundColor = this.value;
+        document.body.style.backgroundImage = "none";
+        localStorage.setItem("bgColor", this.value);
+    });
+});
+
+window.onload = function() {
+    var dailyCode = getDailyCode();
+    var sw1param = document.getElementById("sw1param");
+    if (sw1param) {
+        sw1param.value = dailyCode;
+    }
+
+    var embed = document.getElementById("shockwaveEmbed");
+    if (embed) {
+        embed.setAttribute("sw1", dailyCode);
+        embed.sw1 = dailyCode;
+    }
+	
+    var select = document.getElementById("bgColorSelect");
+    var savedColor = localStorage.getItem("bgColor");
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        document.body.style.backgroundImage = "none";
+        select.value = savedColor;
+    }
+
+    select.addEventListener("change", function() {
+        document.body.style.backgroundColor = this.value;
+        document.body.style.backgroundImage = "none";
+        localStorage.setItem("bgColor", this.value);
+    });
+};
+</script>
+
+</head>
+
+<body>
+
+<div id="colorBox">
+	<select id="bgColorSelect">
+		<option value="#ffffff">White</option>
+		<option value="#000000">Black</option>
+		<option value="#1a1a1a">Dark Grey</option>
+		<option value="#0f172a">Dark Blue</option>
+	</select>
+</div>
+
+<div style="position:absolute;top:50%;left:50%;width:800px;height:450px;margin-top:-240px;margin-left:-320px;">
+
+<object
+	codebase="https://web.archive.org/web/20110316211928/http://download.macromedia.com/pub/shockwave/cabs/director/sw.cab#version=11,5,7,609"
+	ID="start"
+	width="100%"
+	height="100%"
+	VIEWASTEXT>
+
+	<param name="src" value="BurninRubber4/BurninRubber4.dcr">
+	<param id="sw1param" name="sw1" value="">
+	<param name="sw8" value="0">
+	<param name="sw9" value="burnin-rubber-4">
+
+	<param name="swRemote"
+	value="swSaveEnabled='true' swVolume='true' swRestart='true' swPausePlay='true' swFastForward='true' swContextMenu='true' swLoop='true' swDebug='true' swVerbose='true'">
+
+	<param name="swStretchStyle" value="stage">
+	<param name="bgColor" value="#000000">
+	<param name="swStretchHAlign" value="Left">
+	<param name="swStretchVAlign" value="Top">
+
+	<embed
+		id="shockwaveEmbed"
+		src="BurninRubber4/BurninRubber4.dcr"
+		PlayerVersion="11"
+		bgColor="#000000"
+		swStretchHAlign="Left"
+		swStretchVAlign="Top"
+		width="100%"
+		height="100%"
+		swRemote="swSaveEnabled='true' swVolume='true' swRestart='true' swPausePlay='true' swFastForward='true' swContextMenu='true'"
+		swStretchStyle="stage"
+		type="application/x-director"
+		pluginspage="https://web.archive.org/web/20110317175329/http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveDirector"
+		sw1=""
+		sw8=""
+		sw9="burnin-rubber-4">
+	</embed>
+
+</object>
+
+</div>
+
+</body>
+</html>
